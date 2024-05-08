@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const crypto = require("crypto");
 const cookieParser = require('cookie-parser');
+const { CLIENT_RENEG_LIMIT } = require('tls');
 const app = express();
 const client = require('twilio')(process.env.accountSid, process.env.authToken);
 
@@ -31,6 +32,13 @@ function hashOTP(otp) {
 }
 
 // Route for sending OTP
+
+app.get("/",(req,res) => {
+
+res.status(200).send("root")
+})
+
+
 app.post("/send-otp", (req, res) => {
     const otp = generateOTP();
     const hashedOTP = hashOTP(otp);
