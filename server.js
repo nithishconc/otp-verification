@@ -52,7 +52,7 @@ app.post("/send-otp", (req, res) => {
             from: process.env.from, // Use your Twilio phone number
         })
         .then((message) => {
-            console.log(`OTP sent successfully. SID: ${message.sid}`);
+            console.log(`OTP sent successfully SID: ${message.sid}`);
             res.status(200).json({ success: true, message: "OTP sent successfully." });
         })
         .catch((error) => {
