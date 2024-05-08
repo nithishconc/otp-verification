@@ -33,9 +33,8 @@ function hashOTP(otp) {
 
 // Route for sending OTP
 
-app.get("/",(req,res) => {
-
-res.status(200).send("root")
+app.get("/testing",(req,res) => {
+res.status(200).send("testing")
 })
 
 
