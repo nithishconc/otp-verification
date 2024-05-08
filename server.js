@@ -71,10 +71,10 @@ app.post("/verify-otp", (req, res) => {
         res.clearCookie('otp_' + phoneNumber);
         res.status(200).json({ success: true, message: "OTP verified successfully." });
     } else {
-        res.status(400).json({ success: false, message: "Invalid OTP. Please try again." });
+        res.status(400).json({ success: false, message: "Invalid OTP. Please try again!!!!." });
     }
 });
 
 app.listen( port, () => {
-    console.log("Server running at http://localhost:8080");
+    console.log("Server running at http://localhost:8080!");
 });
